@@ -1,0 +1,13 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/player/marcoplay/emilia/hands"
+	"$bumpmap" "models/player/marcoplay/emilia/normal"
+
+	"$lightwarptexture" "models/player/marcoplay/emilia/lightwarp"
+
+	"$phong" "1"
+	"$phongboost"	".5"
+	"$phongexponent" "2"
+	"$phongfresnelranges"	"[0.05 0.5 1]"
+	"$nodecal" 1
+}

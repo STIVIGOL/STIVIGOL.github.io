@@ -1,0 +1,10 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/player/marcoplay/emilia/head"
+	"$bumpmap" "models/player/marcoplay/emilia/normal"
+
+	"$lightwarptexture" "models/player/marcoplay/emilia/lightwarp"
+
+	"$nodecal" 1
+
+}
