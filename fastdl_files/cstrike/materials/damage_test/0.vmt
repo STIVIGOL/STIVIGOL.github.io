@@ -1,12 +1,10 @@
-"Sprite"
+"UnlitGeneric"
 {
 	"$basetexture" "damage_test/0"
-	"$spriteorientation" "vp_parallel"
-	"$spriteorigin" "[ 0.50 0.50 ]"
-	"$ignorez" "1"
 	"$translucent" "1"
 	"$vertexcolor" "1"
 	"$vertexalpha" "1"
+	"$ignorez" "1"
 	"Proxies"
 	{
 		"TextureTransform"
