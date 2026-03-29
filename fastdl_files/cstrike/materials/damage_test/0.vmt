@@ -1,0 +1,18 @@
+"Sprite"
+{
+	"$basetexture" "damage_test/0"
+	"$spriteorientation" "vp_parallel"
+	"$spriteorigin" "[ 0.50 0.50 ]"
+	"$ignorez" "1"
+	"$translucent" "1"
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"Proxies"
+	{
+		"TextureTransform"
+		{
+			"scaleVar" "[4.0 4.0]"
+			"resultVar" "$basetexturetransform"
+		}
+	}
+}
