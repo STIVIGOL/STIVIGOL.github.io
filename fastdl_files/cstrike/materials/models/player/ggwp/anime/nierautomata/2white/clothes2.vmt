@@ -1,0 +1,7 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/player/ggwp/anime/nierautomata/2white/clothes2"
+"$alphatest" "1"
+	$nocull 1
+
+}
