@@ -1,6 +1,0 @@
-"VertexLitGeneric"
-{
-	"$basetexture" "models/player/marcoplay/emilia/misc"
-	"$nodecal" 1
-	"$translucent"			"1"
-}
