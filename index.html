@@ -1,39 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ICOR GAME FASTDL</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <title>ICOR GAME FASTDL</title> <link rel="stylesheet" href="./style/style.css"> <style>
+        /* Стили для вкладок и новых блоков */
+        .tabs { display: flex; justify-content: center; gap: 20px; margin-top: 20px; }
+        .tab-button { background: rgba(0,0,0,0.5); color: #fff; border: 1px solid #444; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
+        .content-section { display: none; padding: 20px; background: rgba(0,0,0,0.7); border-radius: 10px; margin-top: 20px; color: #fff; }
+        .active { display: block; }
+        .server-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 15px; }
+        .stat-card { background: rgba(50, 50, 50, 0.8); padding: 15px; border-radius: 8px; min-width: 150px; text-align: center; }
+        .map-img { width: 200px; height: auto; border-radius: 5px; border: 2px solid #555; }
+        .event-list { text-align: left; display: inline-block; }
+    </style>
 </head>
 <body>
+    <div class="area"> <ul class="circles"> <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+        </ul>
+    </div>
+
     <div class="context">
-        <h1>ICOR GAME FASTDL SERVER</h1>
-    </div>
-    <div class="secondary">
-        <h1>This website is FASTDL server for CS:S ICOR GAME Server.
-            </br>
-            Website was created with GitHub Pages service.
-        </h1>
-    </div>
-    <div class="bottom-text">
-        <h1>.</h1>
+        <h1>ICOR GAME FASTDL SERVER</h1> <div class="tabs">
+            <button class="tab-button" onclick="openTab('main')">Главная</button>
+            <button class="tab-button" onclick="openTab('events')">Ивенты</button>
+            <button class="tab-button" onclick="openTab('stats')">Мониторинг</button>
+        </div>
+
+        <div id="main" class="content-section active">
+            <div class="secondary">
+                <h1>This website is FASTDL server for CS:S ICOR GAME Server.</h1> <p>Используйте этот ресурс для быстрой загрузки карт и звуков.</p>
+            </div>
+        </div>
+
+        <div id="events" class="content-section">
+            <h2>🏆 ТЕКУЩИЙ ИВЕНТ</h2>
+            <p>На нашем сервере в КСС сейчас идет ивент за участие в <b>rpgtop</b>!</p>
+            <div class="event-list">
+                <ul>
+                    <li><b>100 лвл</b> — Значок: Бригадный генерал</li>
+                    <li><b>95 лвл</b> — AK-47 | Фантомный вредитель</li>
+                    <li><b>70 лвл</b> — M4A1-S | Ликвидация</li>
+                    <li><b>50 лвл</b> — Сувенирный набор BLAST.tv Paris Major 2023 Overpass</li>
+                    <li><b>30 лвл</b> — M4A1-S | Эмфорозавр-S</li>
+                    <li><b>Бонус:</b> Старший лейтенант Фарлоу | SWAT</li>
+                </ul>
+            </div>
+            <p>📍 <b>Условие:</b> Пройти карту <b>surf_fruits</b> и ОБЯЗАТЕЛЬНО записать видео прохождения!</p>
+            <p>⚠️ <b>Важно:</b> На сервере должно быть минимум 4 игрока для учета прогресса.</p>
+            <p>⏳ <b>Срок:</b> до 30.04.2026</p>
+        </div>
+
+        <div id="stats" class="content-section">
+            <h2>📊 СОСТОЯНИЕ СЕРВЕРА</h2>
+            <div class="server-stats">
+                <div class="stat-card">
+                    <p><b>IP сервера:</b><br>46.174.48.38:27015</p> </div>
+                <div class="stat-card">
+                    <p><b>Текущая карта:</b></p>
+                    <img src="https://images.gametracker.com/images/maps/160x120/css/surf_fruits.jpg" class="map-img" alt="Map">
+                </div>
+                <div class="stat-card">
+                    <p><b>Игроков:</b><br><span id="player-count">Загрузка...</span></p>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <script>
+        function openTab(tabName) {
+            let sections = document.getElementsByClassName('content-section');
+            for (let section of sections) { section.classList.remove('active'); }
+            document.getElementById(tabName).classList.add('active');
+        }
 
-    <div class="area" >
-            <ul class="circles">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-            </ul>
-    </div >
+        // Функция для вывода времени (имитация)
+        // Для реального времени игрока нужен Steam API + база данных
+        console.log("Stats initialized");
+    </script>
 </body>
 </html>
