@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="./style/style.css">
     
     <style>
-        /* Дополнительные стили для нового функционала */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Exo', sans-serif;
             overflow-x: hidden;
         }
 
@@ -31,7 +30,6 @@
             letter-spacing: 5px;
         }
 
-        /* Навигация (вкладки) */
         .tabs-nav {
             display: flex;
             justify-content: center;
@@ -57,7 +55,6 @@
             color: #000;
         }
 
-        /* Контент секций */
         .content-wrap {
             max-width: 900px;
             margin: 0 auto;
@@ -82,71 +79,56 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Стили Ивента */
-        .event-box {
-            text-align: left;
-            line-height: 1.6;
+        /* Стили для новых кнопок Steam и Discord */
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
         }
 
-        .prize-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .prize-list li {
-            background: rgba(255, 255, 255, 0.05);
-            margin: 5px 0;
-            padding: 10px;
-            border-left: 4px solid #00aaff;
-        }
-
-        .prize-list b {
-            color: #00ccff;
-        }
-
-        .bonus-info {
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px dashed #ffd700;
-            padding: 15px;
-            margin-top: 15px;
+        .btn-social {
+            padding: 15px 30px;
             border-radius: 5px;
-        }
-
-        /* Мониторинг */
-        .server-card {
-            padding: 20px;
-        }
-
-        .connect-btn {
-            display: inline-block;
-            margin-top: 20px;
-            background: #28a745;
-            color: white;
-            padding: 15px 40px;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.5em;
             font-weight: bold;
+            color: #fff;
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+            font-size: 0.9em;
         }
 
-        .connect-btn:hover {
-            background: #218838;
-            transform: scale(1.05);
+        .btn-steam {
+            background: #1b2838;
+            border: 1px solid #66c0f4;
+        }
+        .btn-steam:hover {
+            background: #66c0f4;
+            box-shadow: 0 0 20px #66c0f4;
+            color: #1b2838;
         }
 
-        /* Твой оригинальный фон (circles) */
-        .area {
-            background: #0d1117;  
-            background: -webkit-linear-gradient(to left, #0d1117, #161b22);
-            width: 100%;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
+        .btn-discord {
+            background: #5865F2;
+            border: 1px solid #fff;
         }
+        .btn-discord:hover {
+            background: #fff;
+            box-shadow: 0 0 20px #5865F2;
+            color: #5865F2;
+        }
+
+        /* Ивенты и мониторинг */
+        .prize-list { list-style: none; padding: 0; text-align: left; }
+        .prize-list li { background: rgba(255, 255, 255, 0.05); margin: 5px 0; padding: 10px; border-left: 4px solid #00aaff; }
+        .bonus-info { background: rgba(255, 215, 0, 0.1); border: 1px dashed #ffd700; padding: 15px; margin-top: 15px; border-radius: 5px; }
+        .connect-btn { display: inline-block; margin-top: 20px; background: #28a745; color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-size: 1.5em; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4); }
+        .connect-btn:hover { background: #218838; transform: scale(1.05); }
+
+        .area { background: #0d1117; width: 100%; height: 100vh; position: fixed; top: 0; left: 0; z-index: -1; }
     </style>
 </head>
 <body>
@@ -171,47 +153,43 @@
             <div id="main" class="tab-content active">
                 <h2>Добро пожаловать на FastDL</h2>
                 <p>Этот сайт обеспечивает быструю загрузку файлов (карт, скинов, звуков) для сервера <b>icor_game v0.36 [Surf+RPG]</b>.</p>
-                <p>Если у вас долго качается карта — вы зашли по адресу!</p>
+                
+                <div class="social-buttons">
+                    <a href="https://steamcommunity.com/groups/icor_game" target="_blank" class="btn-social btn-steam">
+                        🌐 STEAM GROUP
+                    </a>
+                    <a href="https://discord.gg/YYdqnVkxDE" target="_blank" class="btn-social btn-discord">
+                        💬 DISCORD
+                    </a>
+                </div>
             </div>
 
             <div id="events" class="tab-content">
-                <div class="event-box">
+                <div class="event-box" style="text-align: left;">
                     <h2 style="color: #00aaff; text-align: center;">🔥 ТЕКУЩИЙ ИВЕНТ: RPG TOP</h2>
-                    <p>На нашем сервере в CS:S сейчас проходит масштабный ивент! Прокачивай свой уровень в RPG и забирай награды:</p>
-                    
+                    <p>Набивай уровень RPG и забирай крутые призы:</p>
                     <ul class="prize-list">
                         <li><b>100 lvl</b> — Значок: Бригадный генерал</li>
                         <li><b>95 lvl</b> — AK-47 | Фантомный вредитель</li>
                         <li><b>70 lvl</b> — M4A1-S | Ликвидация</li>
-                        <li><b>50 lvl</b> — Сувенирный набор BLAST.tv Paris Major 2023 Overpass</li>
+                        <li><b>50 lvl</b> — Сувенирный набор BLAST.tv Paris Major Overpass</li>
                         <li><b>30 lvl</b> — M4A1-S | Эмфорозавр-S</li>
                     </ul>
-
-                    <div class="bonus-info">
-                        <b>🎁 БОНУС:</b> Старший лейтенант Фарлоу | SWAT
-                    </div>
-
-                    <p style="margin-top: 20px;">📍 <b>Что нужно сделать:</b></p>
-                    <ul>
-                        <li>Пройти карту <b>surf_fruits</b>.</li>
-                        <li><b>ОБЯЗАТЕЛЬНО</b> записать прохождение на видео!</li>
-                        <li>Для учета прогресса на сервере должно быть минимум <b>4 игрока</b>.</li>
-                    </ul>
-                    <p style="text-align: center; font-weight: bold; color: #ff4444;">АКЦИЯ ДЕЙСТВУЕТ ДО 30.04.2026</p>
+                    <div class="bonus-info"><b>🎁 БОНУС:</b> Старший лейтенант Фарлоу | SWAT</div>
+                    <p style="margin-top: 15px;">📍 Карта: <b>surf_fruits</b> (запись видео обязательна). Минимум 4 игрока на сервере.</p>
+                    <p style="text-align: center; font-weight: bold; color: #ff4444;">ДО 30.04.2026</p>
                 </div>
             </div>
 
             <div id="stats" class="tab-content">
                 <div class="server-card">
                     <h2>Статус сервера</h2>
-                    <p>IP адрес: <b>91.192.168.105:27015</b></p>
-                    
+                    <p>IP: <b>91.192.168.105:27015</b></p>
                     <div style="margin: 20px 0;">
                         <a href="https://www.gametracker.com/server_info/91.192.168.105:27015/" target="_blank">
                             <img src="https://cache.gametracker.com/server_info/91.192.168.105:27015/b_560_95_1.png" border="0" width="560" height="95" alt="CS:S Server Stats"/>
                         </a>
                     </div>
-
                     <a href="steam://connect/91.192.168.105:27015" class="connect-btn">ЗАЙТИ НА СЕРВЕР</a>
                 </div>
             </div>
@@ -221,17 +199,10 @@
     <script>
         function openTab(evt, tabName) {
             var i, tabContent, tabBtns;
-            
             tabContent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabContent.length; i++) {
-                tabContent[i].classList.remove("active");
-            }
-
+            for (i = 0; i < tabContent.length; i++) { tabContent[i].classList.remove("active"); }
             tabBtns = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tabBtns.length; i++) {
-                tabBtns[i].classList.remove("active");
-            }
-
+            for (i = 0; i < tabBtns.length; i++) { tabBtns[i].classList.remove("active"); }
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
         }
